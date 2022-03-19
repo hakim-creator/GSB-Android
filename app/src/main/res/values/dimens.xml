@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tailletexteView">15dp</dimen>
+    <dimen name="dimensLinearLayout">10dp</dimen>
+    <dimen name="diemnsbutton">55dp</dimen>
+</resources>

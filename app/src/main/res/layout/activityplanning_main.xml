@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/dimensLinearLayout"
+        android:layout_marginRight="@dimen/dimensLinearLayout">
+
+
+        <TextView
+            android:id="@+id/textViewtextliste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="liste des rendez-vous : " />
+        <Spinner
+            android:id="@+id/spinnerrdv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/ButtonAfficherRDV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:layout_gravity="center"
+            android:onClick="clicAfficherRDV"
+            android:text="Afficher les rendez-vous"
+            android:layout_marginTop="300dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewIdSuprdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="N° à supprimer :" />
+
+        <EditText
+            android:id="@+id/editTextIdSuprdv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <Button
+            android:id="@+id/buttonSupprimerrdv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:layout_gravity="center"
+            android:onClick="deleterdvClic"
+            android:text="Supprimer" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:text="Voir le planning d'aujourd'hui"
+            android:layout_gravity="center"
+            android:onClick="clicVoirPlanning"/>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

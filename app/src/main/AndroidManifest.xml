@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gsb">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_gsb"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GSB">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainRDVActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Prendre un rendez-vous">
+
+        </activity>
+
+        <activity android:name=".Planning"
+            android:parentActivityName=".MainActivity"
+            android:label="Planning">
+
+        </activity>
+
+        <activity android:name=".MainProfessionnel"
+            android:parentActivityName=".MainActivity"
+            android:label="Ajouter un Professionnel">
+
+        </activity>
+        <activity android:name=".MainAfficherPro"
+            android:parentActivityName=".MainActivity"
+            android:label="Les professionnels">
+
+        </activity>
+        <activity android:name=".MainPlanningJour"
+            android:parentActivityName=".MainActivity"
+            android:label="Planning du jour">
+
+        </activity>
+
+    </application>
+
+</manifest>

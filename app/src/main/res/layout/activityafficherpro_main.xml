@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/dimensLinearLayout"
+        android:layout_marginRight="@dimen/dimensLinearLayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recherche par ville :"/>
+
+        <EditText
+            android:id="@+id/searshview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:layout_gravity="center"
+            android:text="recherche"
+            android:onClick="clicrecherche"/>
+
+        <TextView
+            android:id="@+id/textViewtextliste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liste des professionnel : " />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/ButtonAfficherRDV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:layout_gravity="center"
+            android:onClick="clicAfficherpro"
+            android:text="Afficher les professionnels"
+            android:layout_marginTop="300dp"
+            />
+        <TextView
+            android:id="@+id/textViewIdSup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="N° à supprimer :" />
+
+        <EditText
+            android:id="@+id/editTextIdSup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text=""
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/buttonSupprimer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemnsbutton"
+            android:layout_gravity="center"
+            android:onClick="deleteClic"
+            android:text="Supprimer" />
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
