@@ -32,6 +32,9 @@ public class MainPlanningJour extends AppCompatActivity {
         spinner = findViewById(R.id.spinnerplanningjour);
 
         calendarViewPlanning = findViewById(R.id.calendarViewPlanning);
+        /**
+         * Calendar planning du jour
+         */
         calendarViewPlanning.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -100,11 +103,17 @@ public class MainPlanningJour extends AppCompatActivity {
 
             }
         });
-
+/**
+ * Instaciation de la collection
+ */
         afficherPlanning = new ArrayList<>();
 
     }
 
+    /**
+     *Bouton voir le planning du jour
+     * @param view
+     */
     public void clicButtonPlanningJour(View view) {
         try {
             afficherPlanning.clear();
@@ -117,10 +126,15 @@ public class MainPlanningJour extends AppCompatActivity {
 
 
             }
+            /**
+             * Adaptateur du spinner Afficher Planning du jour
+             */
             ArrayAdapter<String> rdvjour = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, afficherPlanning);
             rdvjour.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
             spinner.setAdapter(rdvjour);
-
+/**
+ * Configuration Spinner pour Afficher Planning du jour
+ */
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

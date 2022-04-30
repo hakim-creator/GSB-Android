@@ -13,9 +13,17 @@
         <entry key="..\:/HAKIM/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityplanningaujourdhui_main.xml" value="0.19701086956521738" />
         <entry key="..\:/HAKIM/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityrdv_main.xml" value="0.25" />
         <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activity_modif_rdv.xml" value="0.176" />
         <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityafficherpro_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityplanning_main.xml" value="0.264" />
+        <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityplanningaujourdhui_main.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/hakim/OneDrive/Documents/Documents/COURS BTS SIO/SIO2/SLAM/Android studio/GSB/app/src/main/res/layout/activityrdv_main.xml" value="0.12158054711246201" />
       </map>
     </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../../../../../../../../../wamp64/GSB JavaDoc" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

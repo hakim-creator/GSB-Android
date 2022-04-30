@@ -26,7 +26,9 @@ public class MainAfficherPro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activityafficherpro_main);
-
+        /**
+         * Association des variables
+         */
         db = new SQLiteDataBaseHelper(this);
         nomInput = (EditText) findViewById(R.id.edittextNom);
         prenomInput = (EditText) findViewById(R.id.edittextPrenom);
@@ -44,7 +46,9 @@ public class MainAfficherPro extends AppCompatActivity {
         ajouterpro = new ArrayList<>();
         majListe();
 
-
+        /**
+         * Afficher spinner
+         */
          pro = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, ajouterpro);
         pro.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(pro);
@@ -69,6 +73,9 @@ public class MainAfficherPro extends AppCompatActivity {
         majListe();
     }
 
+    /**
+     * Afficher les professionnel
+     */
     public void majListe() {
         try {
             ajouterpro.clear();
@@ -87,6 +94,10 @@ public class MainAfficherPro extends AppCompatActivity {
         }
         }
 
+    /**
+     *Bouton supprimer professionnel
+     * @param view
+     */
     public void deleteClic(View view){
 
         String idS=idInput.getText().toString();
@@ -96,7 +107,10 @@ majListe();
 
     }
 
-
+    /**
+     * Bouton rechercher profession par ville
+     * @param view
+     */
     public void clicrecherche(View view) {
         EditText searshview = findViewById(R.id.searshview);
         if (searshview.getText().toString() != "") {

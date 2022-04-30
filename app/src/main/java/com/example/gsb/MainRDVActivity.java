@@ -33,6 +33,9 @@ public class MainRDVActivity extends AppCompatActivity {
 
 
         calendarView = findViewById(R.id.CalendarViewDate);
+        /**
+         * Calandar prendre rdv
+         */
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -106,7 +109,9 @@ public class MainRDVActivity extends AppCompatActivity {
 
         uneHeure = (EditText) findViewById(R.id.editTextTime);
         spinner =  findViewById(R.id.spinnerproconcerner);
-
+/**
+ * Spinner afficher type pro
+ */
         ArrayAdapter<String> aaLangages = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, professionconcerner);
         aaLangages.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(aaLangages);
@@ -127,7 +132,10 @@ public class MainRDVActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Bouton prendre rdv
+     * @param view
+     */
 
     public void clicPrendreRDV(View view) {
         db2.insertDataRDV(curDate, uneHeure.getText().toString(), professionconcerner[idSelect]);

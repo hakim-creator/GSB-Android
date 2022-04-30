@@ -40,19 +40,20 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
-        <Button
+        <!--<Button
             android:id="@+id/ButtonAfficherRDV"
             android:layout_width="match_parent"
             android:layout_height="@dimen/diemnsbutton"
             android:layout_gravity="center"
             android:onClick="clicAfficherpro"
             android:text="Afficher les professionnels"
-            android:layout_marginTop="300dp"
-            />
+            android:layout_marginTop="150dp"
+            />-->
         <TextView
             android:id="@+id/textViewIdSup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
 
             android:text="N° à supprimer :" />
 

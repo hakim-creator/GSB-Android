@@ -45,6 +45,17 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * Inserer un professionnel
+     * @param nom
+     * @param prenom
+     * @param profession
+     * @param adresse
+     * @param code_postale
+     * @param ville
+     * @param email
+     * @param telephone
+     */
     public void insertData( String nom, String prenom, String profession, String adresse, String code_postale, String ville, String email, String telephone){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -61,7 +72,12 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
+    /**
+     * Inserer rdv
+     * @param uneDate
+     * @param uneHeure
+     * @param unPro
+     */
     public void insertDataRDV(String uneDate, String uneHeure, String unPro)
     {
         SQLiteDatabase db2 = this.getWritableDatabase();
@@ -76,18 +92,34 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Afficher les professionnel
+     * @return
+     */
     public Cursor getAllData(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor result=db.rawQuery("select * from "+TABLE_NAME, null);
         return result;
 
     }
+
+    /**
+     * Afficher le planning du jour
+     * @param uneDate
+     * @return
+     */
     public Cursor getAllDataPlanning(String uneDate){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor result=db.rawQuery("select * from "+TABLE_NAMERDV + " Where LADATE Like '%"+ uneDate + "%'", null);
         return result;
 
     }
+
+    /**
+     * Afficher professionel par ville
+     * @param search
+     * @return
+     */
     public Cursor getAllDataSearch(String search){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor result=db.rawQuery("select * from "+TABLE_NAME+ " Where Ville Like '%"+ search + "%'", null);
@@ -95,12 +127,21 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Afficher les rdv
+     * @return
+     */
     public Cursor getAllData2(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor result=db.rawQuery("select * from "+TABLE_NAMERDV, null);
         return result;
 
     }
+
+    /**
+     * Supprimer les professionnel
+     * @param id
+     */
     public void deleteData(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME,COL_1+"="+id,null);
@@ -108,6 +149,10 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Supprimer les rdv
+     * @param id
+     */
     public void deleteDatardv(int id){
         SQLiteDatabase db2 = this.getWritableDatabase();
         db2.delete(TABLE_NAMERDV,COL_10+"="+id,null);
@@ -115,6 +160,26 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         db2.close();
     }
 
+    /**
+     * Modifier un rdv
+     * @param id
+     * @param uneDate
+     * @param uneHeure
+     * @param unPro
+     */
+    public void updateDatardv(int id,String uneDate, String uneHeure, String unPro)
+    {
+        SQLiteDatabase db2 = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_11, uneDate);
+        contentValues.put(COL_12, uneHeure);
+        contentValues.put(COL_13, unPro);
+
+        db2.update(TABLE_NAMERDV,contentValues, COL_10+"="+id, null);
+        db2.close();
+
+    }
 
 
 

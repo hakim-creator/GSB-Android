@@ -22,6 +22,8 @@ public class Planning extends AppCompatActivity {
     Spinner spinnerrdv;
     int idSelect;
     EditText idInputrdv;
+    EditText idModifrdv;
+
 
     ArrayList<String>lesrdv;
 
@@ -36,8 +38,9 @@ public class Planning extends AppCompatActivity {
         idInputrdv=(EditText) findViewById(R.id.editTextIdSuprdv);
 
 
-
-
+/**
+ * Collection des rdv
+ */
         lesrdv = new ArrayList<>();
         majListeRDV();
 
@@ -62,8 +65,22 @@ public class Planning extends AppCompatActivity {
 
     }
 
+    /**
+     * Bouton modifier rdv
+     * @param view
+     */
+    public void clicModifierPlanning(View view) {
+        Intent intentModifRdv = new Intent(this, MainModifRdv.class);
+
+
+        startActivity(intentModifRdv);
+    }
+
     public void clicAfficherRDV(View view) { majListeRDV(); }
 
+    /**
+     * Affichr les rdv
+     */
     public void majListeRDV() {
         try {
             lesrdv.clear();
@@ -82,6 +99,10 @@ public class Planning extends AppCompatActivity {
         }
     }
 
+    /**
+     * Bouton supprimer rdv
+     * @param view
+     */
 
     public void deleterdvClic(View view) {
         lesrdv.clear();
@@ -91,6 +112,10 @@ public class Planning extends AppCompatActivity {
 
     }
 
+    /**
+     * Bouton Voir le planning du jour
+     * @param view
+     */
     public void clicVoirPlanning(View view) {
         Intent intentPlanningJour = new Intent(this, MainPlanningJour.class);
         startActivity(intentPlanningJour);

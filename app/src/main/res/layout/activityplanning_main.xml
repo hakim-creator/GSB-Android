@@ -23,20 +23,30 @@
             android:id="@+id/spinnerrdv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <Button
+
+
+        <!--<Button
+            android:id="@+id/ButtonAfficherModif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Modifier"
+            android:onClick="clicModifierPlanning"/>-->
+        <!--<Button
             android:id="@+id/ButtonAfficherRDV"
             android:layout_width="match_parent"
             android:layout_height="@dimen/diemnsbutton"
             android:layout_gravity="center"
             android:onClick="clicAfficherRDV"
             android:text="Afficher les rendez-vous"
-            android:layout_marginTop="300dp"
-            />
+            android:layout_marginTop="200dp"
+            />-->
 
         <TextView
             android:id="@+id/textViewIdSuprdv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
 
             android:text="N° à supprimer :" />
 
@@ -59,7 +69,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="@dimen/diemnsbutton"
-            android:text="Voir le planning d'aujourd'hui"
+            android:text="Voir le planning par jour"
             android:layout_gravity="center"
             android:onClick="clicVoirPlanning"/>
 

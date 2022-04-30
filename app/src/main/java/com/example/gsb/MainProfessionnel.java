@@ -1,13 +1,13 @@
 package com.example.gsb;
 
-import android.database.Cursor;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,11 +37,15 @@ public class MainProfessionnel extends AppCompatActivity {
         villeInput = (EditText) findViewById(R.id.edittextVille);
         emailInput = (EditText) findViewById(R.id.editTextTextEmailAddress);
         telephoneInput = (EditText) findViewById(R.id.editTextTextEmailAddress);
-
+/**
+ * Adaptateur spinner affiher type professionnel
+ */
         ArrayAdapter<String> aaLangages = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, typeprofessionnel);
         aaLangages.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(aaLangages);
-
+/**
+ * Configuration du spinner
+ */
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -56,7 +60,10 @@ public class MainProfessionnel extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Bouton Enregistrer pro
+     * @param view
+     */
 
     public void clicEnregistrerPro(View view) {
 

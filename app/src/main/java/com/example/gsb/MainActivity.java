@@ -16,24 +16,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *Bouton prendre rdv
+     * @param view
+     */
     public void ClicRDV(View view) {
         Intent prendrerdv = new Intent(this, MainRDVActivity.class);
         startActivity(prendrerdv);
     }
 
-
+    /**
+     *Bouton Voir planning
+     * @param view
+     */
     public void clicPlanning(View view) {
         Intent planning = new Intent(this, Planning.class);
         startActivity(planning);
     }
 
+    /**
+     *Bouton ajouter pro
+     * @param view
+     */
     public void clicPro(View view) {
         Intent intentPro = new Intent(this, MainProfessionnel.class);
         startActivity(intentPro);
     }
 
 
-
+    /**
+     *Bouton afficher pro
+     * @param view
+     */
     public void clicAfficherPro(View view) {
         Intent intentPro = new Intent(this, MainAfficherPro.class);
         startActivity(intentPro);
