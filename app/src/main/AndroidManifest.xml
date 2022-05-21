@@ -45,11 +45,6 @@
             android:label="Planning du jour">
 
         </activity>
-        <activity android:name=".MainModifRdv"
-            android:parentActivityName=".MainActivity"
-            android:label="Mdofier">
-
-        </activity>
 
     </application>
 

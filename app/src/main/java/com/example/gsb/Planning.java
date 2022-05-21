@@ -65,16 +65,7 @@ public class Planning extends AppCompatActivity {
 
     }
 
-    /**
-     * Bouton modifier rdv
-     * @param view
-     */
-    public void clicModifierPlanning(View view) {
-        Intent intentModifRdv = new Intent(this, MainModifRdv.class);
 
-
-        startActivity(intentModifRdv);
-    }
 
     public void clicAfficherRDV(View view) { majListeRDV(); }
 

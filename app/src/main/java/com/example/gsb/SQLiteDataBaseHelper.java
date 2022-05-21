@@ -160,26 +160,7 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         db2.close();
     }
 
-    /**
-     * Modifier un rdv
-     * @param id
-     * @param uneDate
-     * @param uneHeure
-     * @param unPro
-     */
-    public void updateDatardv(int id,String uneDate, String uneHeure, String unPro)
-    {
-        SQLiteDatabase db2 = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
 
-        contentValues.put(COL_11, uneDate);
-        contentValues.put(COL_12, uneHeure);
-        contentValues.put(COL_13, unPro);
-
-        db2.update(TABLE_NAMERDV,contentValues, COL_10+"="+id, null);
-        db2.close();
-
-    }
 
 
 

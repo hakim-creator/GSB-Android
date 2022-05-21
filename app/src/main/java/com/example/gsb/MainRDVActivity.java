@@ -1,5 +1,6 @@
 package com.example.gsb;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -7,19 +8,25 @@ import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class MainRDVActivity extends AppCompatActivity {
 
 
     CalendarView calendarView;
     String curDate;
-
+    SQLiteDataBaseHelper db;
     Spinner spinner;
     int idSelect;
-    String[] professionconcerner = {"chirurgien(ne)", "pharmacien(ne)", "Medecin generaliste", "psychologue"};
+    TextView textListe;
+   // String[] professionconcerner = {"chirurgien(ne)", "pharmacien(ne)", "Medecin generaliste", "psychologue"};
+    ArrayList<String> ajouterpro;
+    ArrayAdapter<String> pro;
     SQLiteDataBaseHelper db2;
     EditText  uneHeure;
 
@@ -109,12 +116,17 @@ public class MainRDVActivity extends AppCompatActivity {
 
         uneHeure = (EditText) findViewById(R.id.editTextTime);
         spinner =  findViewById(R.id.spinnerproconcerner);
+        ajouterpro = new ArrayList<>();
+        majListe();
 /**
  * Spinner afficher type pro
  */
-        ArrayAdapter<String> aaLangages = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, professionconcerner);
-        aaLangages.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(aaLangages);
+        //ArrayAdapter<String> aaLangages = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, ajouterpro);
+        //aaLangages.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        //spinner.setAdapter(aaLangages);
+        pro = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, ajouterpro);
+        pro.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(pro);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -131,13 +143,29 @@ public class MainRDVActivity extends AppCompatActivity {
 
 
     }
+    public void majListe() {
+        try {
+            ajouterpro.clear();
+            Cursor data = db2.getAllData();
 
+            while (data.moveToNext()) {
+                ajouterpro.add( String.valueOf("Mr/Mdme :"+" "+
+                        data.getString(1) +" "+ data.getString(2)+" "+"("+ data.getString(3)+")") );
+
+
+
+            }
+
+        } catch (Exception e) {
+            textListe.setText(e.getMessage());
+        }
+    }
     /**
      * Bouton prendre rdv
      * @param view
      */
 
     public void clicPrendreRDV(View view) {
-        db2.insertDataRDV(curDate, uneHeure.getText().toString(), professionconcerner[idSelect]);
+        db2.insertDataRDV(curDate, uneHeure.getText().toString(), ajouterpro.get(idSelect));
     }
 }
